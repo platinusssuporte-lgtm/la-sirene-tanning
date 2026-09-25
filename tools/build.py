@@ -55,7 +55,7 @@ BLOCOS = [
     "AFTERCARE", "BRAND", "BRAZILIAN", "COMBOS", "CONCEPT", "CONTACT",
     "CTA", "FAQ", "FINAL_CTA", "FINDER", "FOOTER", "GALLERY", "HERO",
     "HOW", "LOCATION", "LOCATION_SECTION", "MOON_CLASSIC", "MOON_PREMIUM",
-    "NAV", "PREP", "SEO", "SERVICES", "SPRAY", "TESTIMONIALS", "UI", "UV",
+    "NAV", "PREP", "SEO", "SERVICES", "SHOP", "SPRAY", "TESTIMONIALS", "UI", "UV",
 ]
 
 IDIOMA = IDIOMAS[0]
@@ -847,6 +847,36 @@ def combos():
 """
 
 
+# ícones de linha fina, desenhados à mão (sem download), para a Boutique
+ICONES_SHOP = {
+    "bikini": '<path d="M6 5l5 8a3 3 0 0 0 5 0 3 3 0 0 0 5 0l5-8M16 11v2M7 20h18l-6 7h-6z"/>',
+    "frasco": '<path d="M13 4h6v4h-6zM11 8h10l1 4v14a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2V12zM10 16h12"/>',
+    "joia": '<path d="M10 6h12l4 6-10 14L6 12zM6 12h20M13 6l3 6 3-6M16 12v14"/>',
+}
+
+
+def shop():
+    items = "".join(f"""
+      <article class="combo shop__item" data-reveal>
+        <svg class="shop__icon" viewBox="0 0 32 32" aria-hidden="true" fill="none"
+             stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+             stroke-linejoin="round">{ICONES_SHOP[i['icon']]}</svg>
+        <h3 class="combo__name">{e(i['name'])}</h3>
+        {rule()}
+        <p class="combo__desc">{e(i['desc'])}</p>
+        {book_btn(SHOP['cta'], 'ghost')}
+      </article>""" for i in SHOP["items"])
+    return f"""
+<section class="combos shop" id="boutique">
+  <div class="wrap">
+    {section_head(SHOP['eyebrow'], SHOP['title'], e(SHOP['subtitle']))}
+    <div class="combos__grid shop__grid">{items}</div>
+    <p class="shop__note" data-reveal>{e(SHOP['note'])}</p>
+  </div>
+</section>
+"""
+
+
 def finder():
     opts = "".join(f"""
       <a class="finder__card" href="{e(o['target'])}" data-reveal>
@@ -1121,7 +1151,7 @@ def pagina():
     return "".join([
         head(), navbar(), hero(), concept(), services(),
         # spray() e uv() saíram em 25/09/26
-        brazilian(), moon(), combos(), finder(), how(),
+        brazilian(), moon(), combos(), shop(), finder(), how(),
         prep(), aftercare(), faq(), testimonials(), location(),
         final_cta(), footer(),
     ])

@@ -109,24 +109,26 @@ SEO = {
     "title": {
         "es": "La Sirene Tanning | Bronceado brasileño y Baño de Luna en Tampa, FL",
         "pt": "La Sirene Tanning | Bronzeamento brasileiro e Banho de Lua em Tampa, FL",
-        "en": "La Sirene Tanning | Brazilian Tan & Banho de Lua in Tampa, FL",
+        "en": "La Sirene Tanning | Brazilian Tan, Banho de Lua & Boutique in Tampa, FL",
     },
     "description": {
         "es": (
             "Estudio de bronceado brasileño de lujo en Tampa, Florida. Bronceado "
             "brasileño con cinta o con bikini de tela, Baño de Luna, exfoliación "
-            "profesional e hidratación. Reserva tu cita en La Sirene Tanning."
+            "profesional e hidratación, además de moda de playa, productos para el "
+            "cuerpo y accesorios. Reserva tu cita en La Sirene Tanning."
         ),
         "pt": (
             "Estúdio de bronzeamento brasileiro de luxo em Tampa, Florida. "
             "Bronzeamento brasileiro com fita ou com biquíni de tecido, Banho de "
-            "Lua, esfoliação profissional e hidratação. Agende seu horário na La "
-            "Sirene Tanning."
+            "Lua, esfoliação profissional e hidratação, além de moda praia, produtos "
+            "para o corpo e acessórios. Agende seu horário na La Sirene Tanning."
         ),
         "en": (
             "Luxury Brazilian tanning studio in Tampa, Florida. Custom Brazilian tan "
             "with tape or a fabric bikini, Banho de Lua, professional exfoliation "
-            "and hydration. Book your appointment at La Sirene Tanning."
+            "and hydration, plus beachwear, body products and accessories. Book your "
+            "appointment at La Sirene Tanning."
         ),
     },
     "keywords": {
@@ -216,8 +218,9 @@ UI = {
 # ---------------------------------------------------------------------------
 
 NAV = [
-    ({"es": "Inicio", "pt": "Início", "en": "Home"}, "#top"),
+    # "Início" saiu em 25/09/26 para caber a Boutique — o logo já leva ao topo.
     ({"es": "Servicios", "pt": "Serviços", "en": "Services"}, "#services"),
+    ({"es": "Boutique", "pt": "Boutique", "en": "Boutique"}, "#boutique"),
     ({"es": "Cómo funciona", "pt": "Como funciona", "en": "How It Works"}, "#how-it-works"),
     ({"es": "Cuidados", "pt": "Cuidados", "en": "Aftercare"}, "#aftercare"),
     ({"es": "Preguntas", "pt": "Dúvidas", "en": "FAQ"}, "#faq"),
@@ -1282,6 +1285,65 @@ COMBOS = {
             },
         },
     ],
+}
+
+# ---------------------------------------------------------------------------
+# BOUTIQUE — o que a dona vende no estúdio (25/09/26)
+# ---------------------------------------------------------------------------
+# Sem preço e sem foto por enquanto: cada card leva ao WhatsApp. Quando houver
+# fotos dos produtos, dá para acrescentar "image" em cada item.
+
+SHOP = {
+    "eyebrow": {"es": "Boutique", "pt": "Boutique", "en": "Boutique"},
+    "title": {
+        "es": "Llévate el Brillo<br>a Casa",
+        "pt": "Leve o Brilho<br>para Casa",
+        "en": "Take the Glow<br>Home",
+    },
+    "subtitle": {
+        "es": "En el estudio también encuentras todo para completar tu look de verano.",
+        "pt": "No estúdio você também encontra tudo para completar o seu look de verão.",
+        "en": "At the studio you'll also find everything to complete your summer look.",
+    },
+    "items": [
+        {
+            "icon": "bikini",
+            "name": {"es": "Moda de Playa", "pt": "Moda Praia", "en": "Beachwear"},
+            "desc": {
+                "es": "Bikinis y piezas de playa elegidas para lucir tu bronceado.",
+                "pt": "Biquínis e peças de praia escolhidas para valorizar o seu bronzeado.",
+                "en": "Bikinis and beach pieces picked to show off your tan.",
+            },
+        },
+        {
+            "icon": "frasco",
+            "name": {
+                "es": "Productos para el Cuerpo",
+                "pt": "Produtos para o Corpo",
+                "en": "Body Products",
+            },
+            "desc": {
+                "es": "Cuidados para mantener la piel hidratada y el bronceado bonito por más tiempo.",
+                "pt": "Cuidados para manter a pele hidratada e o bronzeado bonito por mais tempo.",
+                "en": "Care products to keep your skin hydrated and your tan beautiful for longer.",
+            },
+        },
+        {
+            "icon": "joia",
+            "name": {"es": "Accesorios", "pt": "Acessórios", "en": "Accessories"},
+            "desc": {
+                "es": "Los detalles que completan tu look, del estudio a la playa.",
+                "pt": "Os detalhes que completam o seu look, do estúdio à praia.",
+                "en": "The finishing touches for your look, from the studio to the beach.",
+            },
+        },
+    ],
+    "cta": {"es": "Consultar", "pt": "Consultar", "en": "Ask us"},
+    "note": {
+        "es": "Disponibles en el estudio. Pregúntanos por modelos, tallas y novedades.",
+        "pt": "Disponíveis no estúdio. Pergunte pelos modelos, tamanhos e novidades.",
+        "en": "Available at the studio. Ask us about styles, sizes and what's new.",
+    },
 }
 
 # ---------------------------------------------------------------------------

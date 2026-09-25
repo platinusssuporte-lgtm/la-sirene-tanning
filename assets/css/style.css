@@ -351,7 +351,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
    a bandeira mostra o nome do idioma por extenso.
    Abaixo de 1080px os links viram menu sanduíche, sobra espaço, e as letras
    voltam a aparecer ao lado da bandeira. */
-@media (min-width:1081px){
+@media (min-width:1200px){
   .lang a > span{
     position:absolute;
     width:1px;height:1px;
@@ -1071,6 +1071,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   transition:border-color var(--t),transform var(--t),background var(--t);
 }
 .combo:hover{border-color:var(--gold);transform:translateY(-6px);background:var(--sand-2)}
+/* boutique (25/09/26): reaproveita o card de combo, 3 colunas, fundo alternado */
+.shop{background:var(--sand-2)}
+.shop__grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.shop__icon{width:40px;height:40px;color:var(--gold-ink);margin-bottom:18px}
+.shop__note{text-align:center;margin-top:34px;font-size:14px;color:var(--ink-55)}
 .combo__name{font-family:var(--serif);font-size:clamp(25px,3vw,34px);line-height:1.15}
 .combo__desc{font-size:15px;line-height:1.8;color:var(--ink-55);margin-bottom:22px}
 .combo__price{
@@ -1578,10 +1583,15 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
    RESPONSIVO
    ========================================================================== */
 
-@media (max-width:1080px){
+/* menu vira sanduíche abaixo de 1200px (era 1080): com a Boutique no menu,
+   entre 1081 e ~1180 os links passavam por baixo das bandeiras */
+@media (max-width:1199px){
   .nav__links{display:none}
   .nav__toggle{display:flex}
   .btn--nav{display:none}
+}
+
+@media (max-width:1080px){
 
   .concept__grid{grid-template-columns:1fr}
   .concept__media{order:-1;max-width:460px}
