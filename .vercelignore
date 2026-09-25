@@ -1,0 +1,9 @@
+# Fotos e vídeos originais sem tratamento — NUNCA vão para o ar.
+assets/img/_source/
+assets/video/_source/
+
+# Arquivos de trabalho: não precisam ser publicados.
+tools/
+content/
+docs/
+.qa-*
